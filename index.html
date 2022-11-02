@@ -2,40 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="yellow"></div>
-      <div class="heading">
-        <h1 class="heading-text">To-Do List</h1>
-      </div>
-      <div class="sort">
-        <img class="sortup" src="./assets/img/Group 91.png">
-        <img class="sortdown" src="./assets/img/Group 73.png">
-      </div>
-      <div class="text-area">
-        <input type="text" class="input-text">
-
-      </div>
-      <div class="add">
-        <button class="addbtn">Add</button>
-      </div>
-      <div class="todos" id="list">
-        <div class="todo-item-container">
-
+    <div class="main">
+        <div class="yellow">
+            <br>
+            <br>
         </div>
-      </div>
+        <div id="myDIV" class="header">
+            <h2>To-Do List</h2>
+            <br>
+            <img class="sekil1" src="./assets/img/Group 74.png" alt="sekil1" style="float:right; margin-right: 13%;">
+            <img class="sekil2" src="./assets/img/Group 90.png" alt="sekil2" style="float:right; margin-right: 13%; display: none;">
+            <br>
+            <br>
+                <input type="text" id="myInput" placeholder="Bura yazin...">
+            
+            
+        </div>
+
+        <ul id="myUL">
+        </ul>
+
+        <div onclick="newElement()" class="addBtn">
+            <button>+</button>
+            <a>Elave et</a>
+        </div>
     </div>
-  </div>
-  <link rel="stylesheet" href="./assets/style.css">
-  <script src="./assets/main.js"></script>
+    <script src="./assets/main.js"></script>
 </body>
 
 </html>

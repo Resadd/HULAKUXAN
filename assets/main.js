@@ -1,42 +1,106 @@
-const textInputField = document.querySelector('.input-text');
-const addButton = document.querySelector('.addbtn');
-const todosContainer = document.querySelector('.todos');
+let myNodelist = document.getElementsByTagName("LI");
+let i;
+
+const sortButton = document.querySelector('#myDIV>img')
+
+let liElements = document.getElementById('myUL')
 
 
-addButton.addEventListener('click', ()=>{
-    if(textInputField.value.trim().length=='')
-    return;
-    
-    const todoItemContainer = document.createElement('div');
-    todoItemContainer.classList.add('todo-item-container');
-
-    todosContainer.appendChild(todoItemContainer)
-
-    const todoText = document.createElement('p')
-    todoText.id = 'todo-text';
-    todoText.innerText = textInputField.value
-    todoItemContainer.appendChild(todoText)
+liElements.addEventListener("click", (e) => {
+    if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove()
+    }
+})
 
 
-    const editButton = document.createElement('button')
-    editButton.id = 'edit';
-    editButton.innerHTML= 'Edit'
-    todoItemContainer.appendChild(editButton)
-    editButton.addEventListener('click', ()=>{
-        textInputField.value = todoText.innerText;
-        const parent = editButton.parentElement
-        parent.parentElement.removeChild(parent);
-    })
+function newElement() {
+    let li = document.createElement("li");
+    let inputValue = document.getElementById("myInput").value;
+    let t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("Bir sheyler elave et!");
+    } else {
+        document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
 
-    const deleteButton = document.createElement('button')
-    deleteButton.id = 'delete'
-    deleteButton.innerHTML= 'Delete'
-    todoItemContainer.appendChild(deleteButton)
-    deleteButton.addEventListener('click', ()=>{
-        const parent = deleteButton.parentElement;
-        parent.parentElement.removeChild(parent)
-    })
+    let span = document.createElement("SPAN");
+    let txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
 
-    textInputField.value='';
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            let div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+
+}
+let aaaa = true
+sortButton.addEventListener("click", () => {
+
+    if (aaaa == true) {
+        let ar = []
+        const data = [...liElements?.children]
+        data.forEach(item => {
+            ar.push(item.innerHTML)
+        })
+        ar.sort();
+        liElements.innerHTML = ""
+        ar.forEach(item => {
+            let li = `<li>${item}</li>`
+
+            liElements.innerHTML += li
+        })
+        let aaaa = false
+        console.log(aaaa)
+    } else if (aaaa == false) {
+        console.log(ar)
+        ar.reverse()
+        console.log(ar)
+        // liElements.innerHTML = ""
+        // ar.forEach(item => {
+        //     let li = `<li>${item}</li>`
+
+        //     liElements.innerHTML += li
+        // })
+        // aaaa = true
+        // console.log(aaaa)
+
+    }
 
 })
+
+
+
+
+sortButton.addEventListener("click", () => {
+
+})
+
+let sekil1 =document.querySelector('.sekil2')
+
+
+if (
+    sekil1.addEventListener("click", () => {
+        sortButton.style.display = "block";
+       sekil1.style.display = "none";
+        let arr = [];
+        list.push(arr);
+        arr.forEach((item) => {
+            item.sort();
+            item.reverse();
+        });
+    })
+) {
+}
+if (
+    sortButton.addEventListener("click", () => {
+    sekil1.style.display = "block";
+        sortButton.style.display = "none";
+    })
+) {
+}
